@@ -29,11 +29,11 @@ public class ArrayUtility <T>{
             return mergedArray[max];
         }
 
-        public Integer getNumberOfOccurrences(T object) {
+        public Integer getNumberOfOccurrences(T valueToEvaluate) {
 
             Integer count = 0;
-            for (T element : array) {
-                if (element == object) {
+            for (T type : array) {
+                if (type == valueToEvaluate) {
 
                     count++;
                 }
@@ -41,11 +41,11 @@ public class ArrayUtility <T>{
             return count;
         }
 
-        public T[] removeValue(T object) {
+        public T[] removeValue(T valueToRemove) {
             Integer j = 0;
-            T[] result = Arrays.copyOf(array,array.length - getNumberOfOccurrences(object));
+            T[] result = Arrays.copyOf(array,array.length - getNumberOfOccurrences(valueToRemove));
             for (int i = 0; i < array.length; i++) {
-                if(array[i] != object){
+                if(array[i] != valueToRemove){
                     result[j] = array[i];
                     j++;
                 }
